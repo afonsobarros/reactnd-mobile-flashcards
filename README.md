@@ -2,8 +2,6 @@
 
 This is an assessment project for Udacity's [React Nanodegree program](https://www.udacity.com/course/react-nanodegree--nd019), developed by [React Training](https://reacttraining.com).
 
-This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
-
 ## Table of Contents
 
 * [Available Scripts](#available-scripts)
@@ -15,6 +13,8 @@ This project was bootstrapped with [Create React Native App](https://github.com/
   * [Data](#data)
   
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 If Yarn was installed when the project was initialized, then dependencies will have been installed via Yarn, and you should probably use it to run these commands as well. Unlike dependency installation, command running syntax is identical for Yarn and NPM at the time of this writing.
 
