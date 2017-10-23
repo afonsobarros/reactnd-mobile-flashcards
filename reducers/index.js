@@ -1,34 +1,36 @@
 import { ADD_DECK, ADD_CARD } from '../actions'
+import { generateId } from '../utils/tools'
+
 
 const beginnerState = {
   React: {
-    id: new Date().getTime(),
+    id: 'React',
     title: 'React',
     questions: [
       {
-        id: new Date().getTime(),
+        id: generateId(),
         question: 'React is based on imperative programming',
         answer: false
       },
       {
-        id: new Date().getTime(),
+        id: generateId(),
         question: 'React can render on client-side and server-side',
         answer: true
       },
       {
-        id: new Date().getTime(),
+        id: generateId(),
         question: 'React was started by the developers at Twitter',
         answer: false
       }
     ]
   },
-  JavaScript: {
-    id: new Date().getTime(),
-    title: 'JavaScript',
+  Javascript: {
+    id: 'Javascript',
+    title: 'Javascript',
     questions: [
       {
-        id: new Date().getTime(),
-        question: 'The first JavaScript engine was created by Brendan Eich at Netscape',
+        id: generateId(),
+        question: 'The first JavaScript engine was created by Brendan Eich at Netscape,',
         answer: true
       }
     ]
@@ -39,17 +41,13 @@ export default function decks(state = beginnerState, action){
   switch (action.type) {
 
     case ADD_DECK:
-      var newState = {
+      return newState = {
         ...state,
         [action.deck.id]: action.deck};
-      console.log("newState - ", newState);
-      return newState
 
     case ADD_CARD:
-      console.log("admit one card");
       var newState = state;
-      newState[action.deck_id].questions.push(action.card);
-      console.log("newState - ", newState);
+      newState[action.deckId].questions.push(action.card);
       return newState
 
     default:

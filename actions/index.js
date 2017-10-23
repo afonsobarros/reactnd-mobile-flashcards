@@ -12,6 +12,6 @@ export function addCard(card, deckId) {
   return {
     type: ADD_CARD,
     card: card,
-    deck_id: deckId
+    deckId: deckId
   }
 }
