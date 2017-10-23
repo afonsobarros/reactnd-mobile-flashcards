@@ -40,7 +40,7 @@ const beginnerState = {
     questions: [
       {
         id: generateId(),
-        question: 'The first JavaScript engine was created by Brendan Eich at Netscape,',
+        question: 'The first JavaScript engine was created by Brendan Eich at Netscape',
         answer: true
       },
       {
