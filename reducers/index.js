@@ -9,18 +9,28 @@ const beginnerState = {
     questions: [
       {
         id: generateId(),
-        question: 'React is based on imperative programming',
-        answer: false
-      },
-      {
-        id: generateId(),
-        question: 'React can render on client-side and server-side',
+        question: 'React is A JavaScript library for building user interfaces',
         answer: true
       },
       {
         id: generateId(),
-        question: 'React was started by the developers at Twitter',
+        question: 'React is Declarative',
+        answer: true
+      },
+      {
+        id: generateId(),
+        question: 'React is not Component-Based',
         answer: false
+      },
+      {
+        id: generateId(),
+        question: 'React DOM uses HTML attribute names instead of camelCase property naming convention.',
+        answer: false
+      }, 
+      {
+        id: generateId(),
+        question: 'JSX is a syntax extension to JavaScript',
+        answer: true
       }
     ]
   },
@@ -31,6 +41,11 @@ const beginnerState = {
       {
         id: generateId(),
         question: 'The first JavaScript engine was created by Brendan Eich at Netscape,',
+        answer: true
+      },
+      {
+        id:generateId(),
+        question: 'SPA stands for Single Page Application',
         answer: true
       }
     ]
