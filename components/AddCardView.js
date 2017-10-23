@@ -8,7 +8,8 @@ import reducer from '../reducers'
 import { addDeck, addCard } from '../actions'
 import { NavigationActions, TabNavigator, StackNavigator } from 'react-navigation';
 import { newCard } from '../utils/tools'
-import { white, black, red, purple, gray, blue, pink } from '../styles/colors'
+import { white, black, purple, gray, orange } from '../styles/colors'
+import { Ionicons } from '@expo/vector-icons';
 
 // Component Class
 class AddCardView extends Component {
@@ -50,6 +51,7 @@ class AddCardView extends Component {
     let deck = this.props.decks[id];
     return (
       <View style={styles.ViewContainer}>
+        <Ionicons name="md-albums" size={32} color={purple} style={{ textAlign: 'center' }} />
         <Text style={styles.titles}>
           Add a Card to "{deck.title}" Deck
         </Text>

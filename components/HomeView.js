@@ -39,13 +39,13 @@ class HomeView extends Component {
   renderItem = (item) => {
     return (
       <TouchableHighlight style={styles.deckItemBtn} onPress={() => this.props.navigation.navigate(
-        'Decks', 
-        { deckId: item.item.id, title: item.item.title, updateHomeView:  this.updateHomeView })}>
+        'Decks',
+        { deckId: item.item.id, title: item.item.title, updateHomeView: this.updateHomeView })}>
         <View style={styles.deckItemView}>
           <Ionicons name="md-list-box" size={32} color={purple} />
           <View>
             <Text style={styles.headText}>{item.item.title}</Text>
-            <Text style={{ justifyContent: 'center' , textAlign:'center'}}>{item.item.questions.length + " Card"+ (item.item.questions.length === 1 ? '':'s')}              
+            <Text style={{ justifyContent: 'center', textAlign: 'center' }}>{item.item.questions.length + " Card" + (item.item.questions.length === 1 ? '' : 's')}
             </Text>
           </View>
         </View>

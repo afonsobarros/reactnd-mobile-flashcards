@@ -7,9 +7,10 @@ import { createStore } from 'redux'
 import reducer from '../reducers'
 import { addDeck, addCard } from '../actions'
 import { ADD_DECK, ADD_CARD } from '../actions'
-import { NavigationActions, TabNavigator, StackNavigator } from 'react-navigation';
+
 import { newDeck } from '../utils/tools'
-import { white, black, red, purple, gray, blue, pink } from '../styles/colors'
+import { white, black, purple, gray, orange } from '../styles/colors'
+import { Ionicons } from '@expo/vector-icons';
 
 // Component Class
 class CreateDeckView extends Component {
@@ -25,7 +26,7 @@ class CreateDeckView extends Component {
   }
 
   checkInput() {
-    if(this.state.title.length < 3) {
+    if (this.state.title.length < 3) {
       alert("Deck Title must be at least 3 characters long!");
       return
     }
@@ -44,14 +45,17 @@ class CreateDeckView extends Component {
   render() {
     return (
       <View style={styles.ViewContainer}>
+        <Ionicons name="md-list-box" size={32} color={purple} style={{ textAlign: 'center' }} />
+
         <Text style={styles.titles}>
           Create a new Deck
           </Text>
 
         <TextInput style={styles.textField} placeholder="Deck Title"
-          value={this.state.title} onChangeText={(title) => this.setState({title})} />
+          value={this.state.title} onChangeText={(title) => this.setState({ title })} />
 
         <TouchableOpacity style={styles.btnOrange} onPress={() => this.checkInput()}>
+          <Ionicons name="md-add-circle" size={32} color="white" style={{ textAlign: 'center' }} />
           <Text style={styles.textWhite}>Create Deck</Text>
         </TouchableOpacity>
 
@@ -61,7 +65,7 @@ class CreateDeckView extends Component {
 }
 
 // Redux Connect
-function mapStateToProps (decks) {
+function mapStateToProps(decks) {
   return {
     decks: decks
   }

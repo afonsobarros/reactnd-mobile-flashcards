@@ -7,8 +7,8 @@ import reducer from '../reducers'
 import { addDeck, addCard } from '../actions'
 
 import { Ionicons } from '@expo/vector-icons';
+import { white, black, purple, gray, orange } from '../styles/colors'
 
-// Component Class
 class DeckView extends Component {
 
   constructor(props) {
@@ -16,7 +16,7 @@ class DeckView extends Component {
     this.updateDeckView = this.updateDeckView.bind(this);
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   updateDeckView(callback) {
     //console.log('update deck view', this.props.navigation.state.params )
@@ -47,20 +47,22 @@ class DeckView extends Component {
       <View style={styles.container}>
         <View style={{ alignItems: 'center', paddingTop: 20 }}>
           <View style={{ marginBottom: 50 }}>
+            <Ionicons name="md-list-box" size={32} color={purple} style={{ textAlign: 'center' }} />
             <Text style={styles.titles}>{deck.title}</Text>
             <Text style={{ textAlign: 'center' }}>{cardsList.length + " Card" + (cardsList.length != 1 ? 's' : '')}</Text>
           </View>
 
           <TouchableOpacity style={styles.btnPurple} onPress={() => { this.startQuiz(deck) }}>
-            <Ionicons name="md-clipboard" size={32} color="white" style={{textAlign:'center'}}/>
+            <Ionicons name="md-clipboard" size={32} color="white" style={{ textAlign: 'center' }} />
             <Text style={styles.textWhite}>Take the Quiz</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.btnOrange} onPress={() => this.props.navigation.navigate(
             'AddCardView', { deckId: id, updateDeckView: this.updateDeckView })}>
+            <Ionicons name="md-albums" size={32} color="white" style={{ textAlign: 'center' }} />
             <Text style={styles.textWhite}>Add Card</Text>
           </TouchableOpacity>
-          
+
         </View>
       </View>
     )
