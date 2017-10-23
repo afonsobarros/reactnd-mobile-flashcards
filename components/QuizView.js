@@ -60,26 +60,26 @@ class QuizView extends Component {
           <Text style={styles.headTextCenter}>{this.state.cards[this.state.currentQuestion].question}</Text>
           
           <View style={{flexDirection: 'row', justifyContent: 'space-around', marginTop: 30, marginBottom: 30}}>
-            <TouchableOpacity style={styles.btnTwo} onPress={() => this.tryGuess(true)}>
+            <TouchableOpacity style={styles.btnPurple} onPress={() => this.tryGuess(true)}>
               <Text style={styles.textWhite}>True</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnTwo} onPress={() => this.tryGuess(false)}>
+            <TouchableOpacity style={styles.btnPurple} onPress={() => this.tryGuess(false)}>
               <Text style={styles.textWhite}>False</Text>
             </TouchableOpacity>
           </View>
 
           <Text style={{margin: 20, textAlign: 'center'}}>{this.state.answerAsText}</Text>
           
-          <TouchableOpacity style={styles.btnOne} onPress={() => this.setState({answerAsText: String(this.state.cards[this.state.currentQuestion].answer) })}>
-            <Text style={styles.textWhite}>Show Answer</Text>
+          <TouchableOpacity style={styles.btn} onPress={() => this.setState({answerAsText: String(this.state.cards[this.state.currentQuestion].answer) })}>
+            <Text >Show Answer</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnTwo} onPress={() => this.restart()}>
+          <TouchableOpacity style={styles.btnPurple} onPress={() => this.restart()}>
             <Text style={styles.textWhite}>Restart Quiz</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnOne} onPress={() => this.props.navigation.goBack()}>
+          <TouchableOpacity style={styles.btnOrange} onPress={() => this.props.navigation.goBack()}>
             <Text>Back To Deck</Text>
           </TouchableOpacity>
         </ScrollView>
@@ -96,11 +96,11 @@ class QuizView extends Component {
 
             <Text>Your Score: {(this.state.correct / this.state.cards.length) * 100}%</Text>
 
-            <TouchableOpacity style={styles.btnTwo} onPress={() => this.restart()}>
+            <TouchableOpacity style={styles.btnPurple} onPress={() => this.restart()}>
               <Text style={styles.textWhite}>Restart Quiz</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnOne} onPress={() => this.props.navigation.goBack()}>
+            <TouchableOpacity style={styles.btnOrange} onPress={() => this.props.navigation.goBack()}>
               <Text style={styles.textWhite}>Back To Deck</Text>
             </TouchableOpacity>
           </ScrollView>

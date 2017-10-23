@@ -77,7 +77,7 @@ class HomeView extends Component {
             <View style={styles.container_stretch}>
               <FlatList style={styles.list} data={decks} renderItem={this.renderItem} keyExtractor={this.getKey} />
             </View>
-            <TouchableOpacity style={styles.btnOne}
+            <TouchableOpacity style={styles.btnOrange}
               onPress={() => this.props.navigation.navigate("CreateDeckView")}>
               <Text style={styles.textWhite}>Add Deck</Text>
             </TouchableOpacity>

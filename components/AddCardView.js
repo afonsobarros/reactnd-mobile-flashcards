@@ -67,7 +67,7 @@ class AddCardView extends Component {
 
         <Text style={{ margin: 15 }}></Text>
 
-        <TouchableOpacity style={styles.btnOne} onPress={() => this.onAddCard()}>
+        <TouchableOpacity style={styles.btnOrange} onPress={() => this.onAddCard()}>
           <Text style={styles.textWhite}>Add New Card</Text>
         </TouchableOpacity>
 

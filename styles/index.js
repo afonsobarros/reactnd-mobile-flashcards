@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { white, black, red, purple, gray, blue, pink } from '../styles/colors'
+import { white, black, purple, gray, orange } from '../styles/colors'
 
 const styles = StyleSheet.create({
   titles: {
@@ -19,15 +19,23 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
 
-  btnOne: {
+  btn: {
     alignItems: 'center',
     justifyContent: 'center',
     padding: 10,
     margin: 10,
-    backgroundColor: '#FF5722',
+    backgroundColor: gray,
     borderRadius: 3
   },
-  btnTwo: {
+  btnOrange: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 10,
+    margin: 10,
+    backgroundColor: orange,
+    borderRadius: 3
+  },
+  btnPurple: {
     alignItems: 'center',
     justifyContent: 'center',
     padding: 10,

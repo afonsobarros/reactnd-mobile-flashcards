@@ -51,12 +51,12 @@ class DeckView extends Component {
             <Text style={{ textAlign: 'center' }}>{cardsList.length + " Card" + (cardsList.length != 1 ? 's' : '')}</Text>
           </View>
 
-          <TouchableOpacity style={styles.btnTwo} onPress={() => { this.startQuiz(deck) }}>
+          <TouchableOpacity style={styles.btnPurple} onPress={() => { this.startQuiz(deck) }}>
             <Ionicons name="md-clipboard" size={32} color="white" style={{textAlign:'center'}}/>
             <Text style={styles.textWhite}>Take the Quiz</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnOne} onPress={() => this.props.navigation.navigate(
+          <TouchableOpacity style={styles.btnOrange} onPress={() => this.props.navigation.navigate(
             'AddCardView', { deckId: id, updateDeckView: this.updateDeckView })}>
             <Text style={styles.textWhite}>Add Card</Text>
           </TouchableOpacity>
