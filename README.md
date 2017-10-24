@@ -2,6 +2,8 @@
 
 This is an assessment project for Udacity's [React Nanodegree program](https://www.udacity.com/course/react-nanodegree--nd019), developed by [React Training](https://reacttraining.com).
 
+Tested on Android 7.1.0.
+
 ## Table of Contents
 
 * [Available Scripts](#available-scripts)
