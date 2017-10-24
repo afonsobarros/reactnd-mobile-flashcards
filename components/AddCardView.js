@@ -7,7 +7,7 @@ import { createStore } from 'redux'
 import reducer from '../reducers'
 import { addDeck, addCard } from '../actions'
 import { NavigationActions, TabNavigator, StackNavigator } from 'react-navigation';
-import { newCard } from '../utils/tools'
+import { newCard } from '../utils'
 import { white, black, purple, gray, orange } from '../styles/colors'
 import { Ionicons } from '@expo/vector-icons';
 
@@ -78,7 +78,6 @@ class AddCardView extends Component {
   }
 }
 
-// Redux Connect
 function mapStateToProps(decks) {
   return {
     decks: decks

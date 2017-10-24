@@ -7,7 +7,7 @@ import reducer from '../reducers'
 import { addDeck, addCard } from '../actions'
 import { NavigationActions, TabNavigator, StackNavigator } from 'react-navigation';
 
-import { setLocalNotification, clearLocalNotifications } from '../utils/tools'
+import { setLocalNotification, clearLocalNotifications } from '../utils'
 
 import { white, black, purple, gray, orange } from '../styles/colors'
 import { Ionicons } from '@expo/vector-icons';
@@ -23,7 +23,7 @@ class QuizView extends Component {
 
     this.state = {
       correct: 0,
-      wrong: 0,
+      incorrect: 0,
       currentQuestion: 0,
       deck: deck,
       cards: cards,
@@ -41,7 +41,7 @@ class QuizView extends Component {
     }
     else {
       this.setState((prevState) => {
-        return { answerAsText: "", wrong: prevState.wrong + 1, currentQuestion: prevState.currentQuestion + 1 }
+        return { answerAsText: "", incorrect: prevState.incorrect + 1, currentQuestion: prevState.currentQuestion + 1 }
       })
     }
   }
@@ -57,7 +57,7 @@ class QuizView extends Component {
   }
 
   restart() {
-    this.setState({ currentQuestion: 0, correct: 0, wrong: 0, playing: true });
+    this.setState({ currentQuestion: 0, correct: 0, incorrect: 0, playing: true });
   }
 
   render() {
@@ -68,7 +68,7 @@ class QuizView extends Component {
             <Text style={{ marginTop: 30, textAlign: 'center' }}>{`Question ${this.state.currentQuestion + 1} of ${this.state.cards.length}`}</Text>
             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-around', marginBottom: 50 }}>
               <Text style={{ margin: 10 }}>Correct: {this.state.correct}</Text>
-              <Text style={{ margin: 10 }}>Wrong: {this.state.wrong}</Text>
+              <Text style={{ margin: 10 }}>Wrong: {this.state.incorrect}</Text>
             </View>
             <Text style={styles.headTextCenter}>{this.state.cards[this.state.currentQuestion].question}</Text>
 
@@ -138,7 +138,6 @@ class QuizView extends Component {
   }
 }
 
-// Redux Connect
 function mapStateToProps({ decks }) {
   return {
     decks: decks

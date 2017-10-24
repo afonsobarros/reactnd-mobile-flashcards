@@ -1,5 +1,5 @@
 import { ADD_DECK, ADD_CARD } from '../actions'
-import { generateId } from '../utils/tools'
+import { generateId } from '../utils'
 
 
 const beginnerState = {

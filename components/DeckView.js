@@ -69,7 +69,6 @@ class DeckView extends Component {
   }
 }
 
-// Redux Connect
 function mapStateToProps(decks) {
   return {
     decks: decks

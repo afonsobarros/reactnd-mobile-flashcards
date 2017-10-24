@@ -8,7 +8,7 @@ import reducer from '../reducers'
 import { addDeck, addCard } from '../actions'
 import { ADD_DECK, ADD_CARD } from '../actions'
 
-import { newDeck } from '../utils/tools'
+import { newDeck } from '../utils'
 import { white, black, purple, gray, orange } from '../styles/colors'
 import { Ionicons } from '@expo/vector-icons';
 
@@ -71,7 +71,6 @@ class CreateDeckView extends Component {
   }
 }
 
-// Redux Connect
 function mapStateToProps(decks) {
   return {
     decks: decks
