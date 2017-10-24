@@ -55,7 +55,6 @@ class CreateDeckView extends Component {
           value={this.state.title} onChangeText={(title) => this.setState({ title })} />
 
         <TouchableOpacity style={styles.btnOrange} onPress={() => this.checkInput()}>
-          <Ionicons name="md-add-circle" size={32} color="white" style={{ textAlign: 'center' }} />
           <Text style={styles.textWhite}>Create Deck</Text>
         </TouchableOpacity>
 

@@ -75,30 +75,37 @@ class QuizView extends Component {
 
             <Text style={{ margin: 20, textAlign: 'center' }}>{this.state.answerAsText}</Text>
 
-            <TouchableOpacity style={styles.btn} onPress={() => this.setState({ answerAsText: String(this.state.cards[this.state.currentQuestion].answer) })}>
+
+            <TouchableOpacity style={styles.btnOrange} onPress={() => this.setState({ answerAsText: String(this.state.cards[this.state.currentQuestion].answer) })}>
               <Text style={styles.textWhite} >Show Answer</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnPurple} onPress={() => this.restart()}>
-              <Text style={styles.textWhite}>Restart Quiz</Text>
-            </TouchableOpacity>
+            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
 
-            <TouchableOpacity style={styles.btnOrange} onPress={() => this.props.navigation.goBack()}>
-              <Text style={styles.textWhite}>Back To Deck</Text>
-            </TouchableOpacity>
+              <TouchableOpacity style={styles.btn} onPress={() => this.props.navigation.goBack()}>
+                <Text style={styles.textWhite}>Back to Deck</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={styles.btnPurple} onPress={() => this.restart()}>
+                <Text style={styles.textWhite}>Restart Quiz</Text>
+              </TouchableOpacity>
+            </View>
+
           </ScrollView>
         </View>
       )
     }
     else {
+      let score = (this.state.correct / this.state.cards.length) * 100;
       return (
         <View style={styles.QuizContainer}>
           <ScrollView>
-            <Ionicons style={{ marginTop: 50, marginBottom: 50, textAlign: 'center' }} name="md-clipboard" size={32} color="black" />
+            <Ionicons style={{ marginTop: 50, textAlign: 'center' }} name="md-clipboard" size={32} color={purple} />
+            <Text style={[styles.headText, { marginBottom: 50 }]}>Quiz Over!</Text>
 
-            <Text style={styles.headText}>Quiz Over!</Text>
 
-            <Text style={{ textAlign: 'center', marginBottom: 50 }}>Your Score: {(this.state.correct / this.state.cards.length) * 100}%</Text>
+            <Text style={{ textAlign: 'center', marginBottom: 20 }}>Your Score: {score}%</Text>
+            <Ionicons style={{ textAlign: 'center', marginBottom: 50 }} name={score > 50 ? "md-happy" : 'md-sad'} size={32} color={purple} />
 
             <TouchableOpacity style={styles.btnPurple} onPress={() => this.restart()}>
               <Ionicons style={{ textAlign: 'center' }} name="md-repeat" size={32} color="white" />
@@ -107,7 +114,7 @@ class QuizView extends Component {
 
             <TouchableOpacity style={styles.btnOrange} onPress={() => this.props.navigation.goBack()}>
               <Ionicons style={{ textAlign: 'center' }} name="md-return-left" size={32} color="white" />
-              <Text style={styles.textWhite}>Back To Deck</Text>
+              <Text style={styles.textWhite}>Back to Deck</Text>
             </TouchableOpacity>
           </ScrollView>
         </View>

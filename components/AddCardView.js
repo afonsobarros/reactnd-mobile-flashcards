@@ -61,10 +61,10 @@ class AddCardView extends Component {
 
         <Text style={{ margin: 20 , textAlign:'center'}}>Answer</Text>
         
-        <View style={{ flexDirection: 'row', alignItems:'center' }}>
-          <Text style={{ marginRight: 20 }}>False</Text>
+        <View style={{flexDirection: 'row', alignItems:'center', }}>
+          <Text style={{ marginRight: 20, flex:1, textAlign:'center' }}>False</Text>
           <Switch value={this.state.answer} onValueChange={(value) => this.setState({ answer: value })} />
-          <Text style={{ marginLeft: 20 }}>True</Text>
+          <Text style={{ marginLeft: 20 , flex:1, textAlign:'center'}}>True</Text>
         </View>
 
         <Text style={{ margin: 15 }}></Text>
