@@ -56,7 +56,7 @@ class AddCardView extends Component {
           Add a Card to "{deck.title}" Deck
         </Text>
 
-        <TextInput style={styles.textField} placeholder="Enter Question"
+        <TextInput style={styles.input} placeholder="Enter Question"
           value={this.state.question} onChangeText={(question) => this.setState({ question: question })} />
 
         <Text style={{ margin: 20 , textAlign:'center'}}>Answer</Text>

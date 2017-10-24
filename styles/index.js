@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     padding: 10
   },
 
-  textField: {
+  input: {
     height: 45,
     margin: 10,
     marginTop: 50,

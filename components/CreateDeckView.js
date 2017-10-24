@@ -49,9 +49,9 @@ class CreateDeckView extends Component {
 
         <Text style={styles.titles}>
           Create a new Deck
-          </Text>
+        </Text>
 
-        <TextInput style={styles.textField} placeholder="Deck Title"
+        <TextInput style={styles.input} placeholder="Deck Title"
           value={this.state.title} onChangeText={(title) => this.setState({ title })} />
 
         <TouchableOpacity style={styles.btnOrange} onPress={() => this.checkInput()}>

@@ -23,7 +23,6 @@ class HomeView extends Component {
   }
 
   updateHomeView(callback) {
-    console.log('updateHomeView')
     this.forceUpdate(() => {
       if (callback) {
         callback()
