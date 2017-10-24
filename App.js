@@ -62,7 +62,7 @@ const MainTabs = TabNavigator({
       title: "Add Deck"
     }
   }
-}, tabsConfig,);
+}, noTabs);
 
 const DeckTabs = TabNavigator({
 

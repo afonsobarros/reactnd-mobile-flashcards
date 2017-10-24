@@ -51,6 +51,7 @@ class HomeView extends Component {
       </TouchableHighlight>
     )
   }
+  
   getKey(item, index) {
     return item.id
   }
@@ -77,7 +78,7 @@ class HomeView extends Component {
               <FlatList style={styles.list} data={decks} renderItem={this.renderItem} keyExtractor={this.getKey} />
             </View>
             <TouchableOpacity style={styles.btnOrange}
-              onPress={() => this.props.navigation.navigate("CreateDeckView")}>
+              onPress={() => this.props.navigation.navigate("CreateDeckView", { updateHomeView: this.updateHomeView })}>
               <Text style={styles.textWhite}>Add Deck</Text>
             </TouchableOpacity>
           </View>
@@ -87,12 +88,12 @@ class HomeView extends Component {
   }
 }
 
-// Redux Connect
 function mapStateToProps(decks) {
   return {
     decks: decks
   }
 }
+
 function mapDispatchToProps(dispatch) {
   return {
     addDeck: (deck) => dispatch(addDeck(deck)),

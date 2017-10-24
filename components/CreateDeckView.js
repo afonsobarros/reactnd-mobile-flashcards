@@ -39,7 +39,15 @@ class CreateDeckView extends Component {
     this.setState({
       title: "",
     })
+
     this.props.navigation.goBack();
+
+    setTimeout(
+      () => this.props.navigation.navigate(
+      'Decks',
+      { deckId: deck.id, title: deck.title, updateHomeView: this.props.navigation.state.params.updateHomeView })
+      , 800);
+
   }
 
   render() {

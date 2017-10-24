@@ -27,7 +27,8 @@ class QuizView extends Component {
       currentQuestion: 0,
       deck: deck,
       cards: cards,
-      answerAsText: ""
+      answerAsText: "",
+      playing: true
     }
   }
 
@@ -45,12 +46,18 @@ class QuizView extends Component {
     }
   }
 
-  quizFinished(){
-    clearLocalNotification().then(setLocalNotification())
+  quizFinished() {
+    if (this.state.playing) {
+      this.setState({
+        playing: false
+      })
+      clearLocalNotifications().then(setLocalNotification())
+
+    }
   }
 
   restart() {
-    this.setState({ currentQuestion: 0, correct: 0, wrong: 0 });
+    this.setState({ currentQuestion: 0, correct: 0, wrong: 0, playing: true });
   }
 
   render() {
