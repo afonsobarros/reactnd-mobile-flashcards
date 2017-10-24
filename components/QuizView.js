@@ -7,6 +7,8 @@ import reducer from '../reducers'
 import { addDeck, addCard } from '../actions'
 import { NavigationActions, TabNavigator, StackNavigator } from 'react-navigation';
 
+import { setLocalNotification, clearLocalNotifications } from '../utils/tools'
+
 import { white, black, purple, gray, orange } from '../styles/colors'
 import { Ionicons } from '@expo/vector-icons';
 
@@ -29,7 +31,7 @@ class QuizView extends Component {
     }
   }
 
-  tryGuess(guess) {
+  answer(guess) {
     let card = this.state.cards[this.state.currentQuestion];
     if (guess === card.answer) {
       this.setState((prevState) => {
@@ -41,6 +43,10 @@ class QuizView extends Component {
         return { answerAsText: "", wrong: prevState.wrong + 1, currentQuestion: prevState.currentQuestion + 1 }
       })
     }
+  }
+
+  quizFinished(){
+    clearLocalNotification().then(setLocalNotification())
   }
 
   restart() {
@@ -61,14 +67,14 @@ class QuizView extends Component {
 
             <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 30, marginBottom: 30 }}>
 
-              <TouchableOpacity style={styles.btnPurple} onPress={() => this.tryGuess(false)}>
+              <TouchableOpacity style={styles.btnPurple} onPress={() => this.answer(false)}>
                 <Ionicons name="md-close-circle" size={32} color="white" style={{ textAlign: 'center' }} />
-                <Text style={styles.textWhite}>False</Text>
+                <Text style={styles.textWhite}>Incorrect</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style={styles.btnOrange} onPress={() => this.tryGuess(true)}>
+              <TouchableOpacity style={styles.btnOrange} onPress={() => this.answer(true)}>
                 <Ionicons name="md-checkmark-circle" size={32} color="white" style={{ textAlign: 'center' }} />
-                <Text style={styles.textWhite}>True</Text>
+                <Text style={styles.textWhite}>Correct</Text>
               </TouchableOpacity>
 
             </View>
@@ -97,6 +103,7 @@ class QuizView extends Component {
     }
     else {
       let score = (this.state.correct / this.state.cards.length) * 100;
+      this.quizFinished();
       return (
         <View style={styles.QuizContainer}>
           <ScrollView>

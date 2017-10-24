@@ -16,7 +16,7 @@ import CreateDeckView from './components/CreateDeckView'
 import DeckView from './components/DeckView'
 import AddCardView from './components/AddCardView'
 
-import { setLocalNotification, createNotification, clearLocalNotifications } from './utils/tools'
+import { setLocalNotification, clearLocalNotifications } from './utils/tools'
 
 function FlashcardsStatusBar({ backgroundColor, ...props }) {
   return (
