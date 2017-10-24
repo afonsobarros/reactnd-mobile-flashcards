@@ -16,6 +16,8 @@ import CreateDeckView from './components/CreateDeckView'
 import DeckView from './components/DeckView'
 import AddCardView from './components/AddCardView'
 
+import { setLocalNotification, createNotification, clearLocalNotifications } from './utils/tools'
+
 function FlashcardsStatusBar({ backgroundColor, ...props }) {
   return (
     <View style={{ backgroundColor, height: Constants.statusBarHeight }}>
@@ -106,6 +108,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    setLocalNotification()
   }
 
   render() {
